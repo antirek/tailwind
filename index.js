@@ -1,32 +1,16 @@
-const pug = require('pug');
+const express = require('express')
+const app = express()
+const port = 3000
 
+const cards = require('./cards');
 
-const visitcard = {
-    render: (ele) => {
-        return pug.renderFile('visitcard.pug', ele);
-    }
-}
+app.set('views', './views')
+app.set('view engine', 'pug')
 
-const elements = [
-    {
-        type: 'meta',
-        title: 'Hello page',
-        author: 'Bregan',
-        background: 'http://wewrwer.ru/dsfdsf.jpg'
-    },
-    {
-        type: 'visitcard',
-        photo: 'http://',
-        name: 'Allow',
-        contacts: {
-            phone: '78978974359',
-            phone2: null,
-            phone3: null,
-            email: 'sddfkdfl;gk@bnbn.ru',
-        },
-    },
-];
+app.get('/', (req, res) => res.send('Hello World!'))
 
-const html = visitcard.render(elements[1]);
+app.get('/index', function (req, res) {
+    res.render('index', { data: cards.html()})
+})
 
-console.log('html', html);
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))

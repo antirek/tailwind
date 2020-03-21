@@ -1,0 +1,9 @@
+.bg-gray-500.rounded-lg.p-6.w-full.mb-4(class='md:flex')
+  img.h-16.w-16.rounded-full.mx-auto(class='md:h-24 md:w-24 md:mx-0 md:mr-6', src='' + photo)
+  .text-center(class='md:text-left')
+    h2.text-lg= name
+    .text-purple-500
+    if contacts.email
+      .text-gray-600= contacts.email
+    if contacts.phone
+      .text-gray-600= contacts.phone
