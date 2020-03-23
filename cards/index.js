@@ -12,6 +12,12 @@ const buttons = {
     }
 }
 
+const questions = {
+    render: (ele) => {
+        return pug.renderFile(__dirname + '/questions.pug', ele);
+    }
+}
+
 const elements = [
     {
         type: 'meta',
@@ -31,20 +37,49 @@ const elements = [
         },
     },
     {
-        type: 'buttonplace',
+        type: 'buttons',
         style: 'icons',
         buttons: [
             {
                 id: '',
                 text: 'Напиши в WhatsApp',
-                type: 'whatsapp',
-                number: '7836584658'
+                icon: 'whatsapp',
+                url: 'http://www.mobilon.ru/',
+                bgColor: 'bg-green-500',
+                bgHoverColor: 'bg-green-400',
+                textColor: 'text-white',
             },
             {
                 id: '',
                 text: 'Viber',
-                type: 'viber',
-                number: '7836584658'
+                icon: 'viber',
+                url: '7836584658',
+                bgColor: 'bg-purple-800',
+                bgHoverColor: 'bg-purple-600',
+                textColor: 'text-white',
+            },
+            {
+                id: '',
+                text: 'Telegram',
+                icon: 'viber',
+                url: '7836584658',
+                bgColor: 'bg-blue-500',
+                bgHoverColor: 'bg-blue-400',
+                textColor: 'text-white',
+            },
+        ],
+    },
+    {
+        type: 'faq',
+        style: 'compact',
+        questions: [
+            {
+                question: 'How do you do?',
+                answer: 'All right!',
+            },
+            {
+                question: 'How do you do?',
+                answer: 'All right!',
             },
         ],
     },

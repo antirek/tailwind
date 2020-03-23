@@ -1,6 +1,14 @@
-.bg-gray-500.rounded-lg.p-6.w-full.mb-4(class='md:flex')
+.bg-gray-400.rounded-lg.p-6.w-full.mb-4(class='md:flex')
   .inline-flex.w-full
-    button.bg-gray-300.w-full.text-gray-800.font-bold.py-2.px-4.rounded-l(class='hover:bg-gray-400')
-      | Prev
-    button.bg-gray-300.w-full.text-gray-800.font-bold.py-2.px-4.rounded-r(class='hover:bg-gray-400')
-      | Next
+    each val, index in buttons
+      if val && val.text
+        a.w-full.font-bold.py-2.px-4.text-center.align-baseline.inline-block(
+          class='hover:' + (val.bgHoverColor || 'bg-gray-600'),
+          class= val.bgColor || 'bg-gray-800',
+          class= index === 0 && 'rounded-l',
+          class= val.textColor || 'text-gray-600',
+          class= index === buttons.length - 1 && 'rounded-r',
+          href= val.url,
+          target= val.target || '_blank',
+          )= val.text
+      
