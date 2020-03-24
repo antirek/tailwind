@@ -29,6 +29,7 @@ const elements = [
         type: 'visitcard',
         photo: 'http://',
         name: 'Allow',
+        description: 'My head is egg.\nDraw youserlf.',
         contacts: {
             phone: '78978974359',
             phone2: null,

@@ -3,11 +3,19 @@ html
   head
     title My Site - #{title}
     link(href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet")
+    meta(name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no")
     style.
+        /* Small (sm) */
+        @media (min-width: 320px) { 
+          .container {
+            max-width: 320px;
+          }
+        }
+
         @media (min-width: 768px) {
-            .container {
-                max-width: 768px;
-            }
+          .container {
+            max-width: 768px;
+          }
         }
   body
     block content

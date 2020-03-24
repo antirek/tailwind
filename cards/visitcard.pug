@@ -1,9 +1,14 @@
-.bg-gray-500.rounded-lg.p-6.w-full.mb-4(class='md:flex')
-  img.h-16.w-16.rounded-full.mx-auto(class='md:h-24 md:w-24 md:mx-0 md:mr-6', src='https://image.freepik.com/free-vector/_102172-32.jpg')
-  .text-center(class='md:text-left')
-    h2.text-lg= name
+.bg-gray-400.rounded-lg.p-6.w-full.mb-4.mt-4(class='md:flex')
+  img.h-24.w-24.rounded-full.mx-auto(
+    class='md:h-32 md:w-32 md:mx-0 md:mr-6', 
+    src='https://image.freepik.com/free-vector/_102172-32.jpg'
+  )
+  .mx-auto.width-full(class='md:mt-0 md:ml-12')
+    h2.text-center(class='md:text-left ').text-lg= name
     .text-purple-500
     if contacts.email
       .text-gray-600= contacts.email
     if contacts.phone
       .text-gray-600= contacts.phone
+    if description
+      .text-gray-600!= description
